@@ -5,18 +5,20 @@ GO_MODULE := github.com/faujiahmat/zentra-proto
 clean:
 ifeq ($(OS), Windows_NT)
 	if exist "protogen" rd /s /q protogen
-	mkdir protogen\go
+	mkdir protogen
 else
 	rm -fR ./protogen 
-	mkdir -p ./protogen/go
+	mkdir -p ./protogen
 endif
 
 
 .PHONY: protoc-go
 protoc-go:
-	protoc --go_opt=module=${GO_MODULE} --go_out=. \
-	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
-	./proto/hello/*.proto
+	protoc --go_out=. --go_opt=paths=source_relative \
+	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
+	./proto/user/*.proto ./proto/user/type/*.proto \
+	./proto/product/*.proto ./proto/product/type/*.proto
+
 
 .PHONY: build
 build: clean protoc-go
