@@ -7,7 +7,7 @@ ifeq ($(OS), Windows_NT)
 	if exist "protogen" rd /s /q protogen
 	mkdir protogen\go
 else
-	rm --force --recursive ./protogen 
+	rm -fR ./protogen 
 	mkdir -p ./protogen
 endif
 
