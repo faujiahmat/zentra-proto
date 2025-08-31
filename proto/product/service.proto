@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package product;
+
+import "google/protobuf/empty.proto";
+import "proto/product/type/cart.proto";
+import "proto/product/type/product.proto";
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/product";
+
+service ProductService {
+  rpc FindManyByIdsForCart(product.type.ProductIds) 
+  returns (product.type.ProductsCartRes) {}
+  rpc ReduceStocks(product.type.ReduceStocksReq) 
+  returns (google.protobuf.Empty) {}
+  rpc RollbackStocks(product.type.RollbackStocksReq) 
+  returns (google.protobuf.Empty) {}
+}
