@@ -14,7 +14,7 @@ endif
 
 .PHONY: protoc-go
 protoc-go:
-	protoc --go_opt=module=${GO_MODULE} --go_out=. \
+	protoc --go_out=. --go_opt=module=${GO_MODULE} --go_opt=paths=source_relative \
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
 	./proto/user/*.proto ./proto/user/type/*.proto \
 	./proto/product/*.proto ./proto/product/type/*.proto \
