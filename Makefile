@@ -14,10 +14,11 @@ endif
 
 .PHONY: protoc-go
 protoc-go:
-	protoc --go_out=. --go_opt=module=${GO_MODULE} --go_opt=paths=source_relative \
-	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
+	protoc --go_out=. --go_opt=paths=source_relative \
+	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
 	./proto/user/*.proto ./proto/user/type/*.proto \
-	./proto/product/*.proto ./proto/product/type/*.proto \
+	./proto/product/*.proto ./proto/product/type/*.proto
+
 
 .PHONY: build
 build: clean protoc-go
