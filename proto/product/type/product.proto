@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package product.type;
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/product";
+
+message ProductIds {
+  repeated uint32 ids = 1;
+}
+
+message ProductOrder {
+  string order_id  = 1 [json_name = "order_id"];
+  uint32 product_id = 2 [json_name = "product_id"];
+  string product_name = 3 [json_name = "product_name"];
+  uint32 quantity = 4;
+  string image = 5;
+  uint32 price = 7;
+}
+
+message ReduceStocksReq {
+  repeated ProductOrder data = 1;
+}
+
+message RollbackStocksReq {
+  repeated ProductOrder data = 1;
+}
