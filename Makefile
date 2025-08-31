@@ -5,7 +5,7 @@ GO_MODULE := github.com/faujiahmat/zentra-proto
 clean:
 ifeq ($(OS), Windows_NT)
 	if exist "protogen" rd /s /q protogen
-	mkdir protogen\go
+	mkdir protogen
 else
 	rm -fR ./protogen 
 	mkdir -p ./protogen
