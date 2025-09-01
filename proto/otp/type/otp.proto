@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package otp.type;
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/otp";
+
+message SendReq {
+  string email = 1;
+}
+
+message VerifyReq {
+  string email = 1;
+  string otp = 2;
+}
+
+message VerifyRes {
+  bool valid = 1;
+}

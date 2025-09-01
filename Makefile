@@ -17,6 +17,7 @@ protoc-go:
 	protoc --go_opt=module=${GO_MODULE} --go_out=. \
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
 	./proto/user/*.proto ./proto/user/type/*.proto \
+	./proto/otp/*.proto ./proto/otp/type/*.proto \
 	./proto/product/*.proto ./proto/product/type/*.proto
 
 

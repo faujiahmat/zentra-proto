@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package otp;
+
+import "google/protobuf/empty.proto";
+import "proto/otp/type/otp.proto";
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/otp";
+
+service OtpService {
+  rpc Send(otp.type.SendReq) returns (google.protobuf.Empty) {}
+  rpc Verify(otp.type.VerifyReq) returns (otp.type.VerifyRes) {}
+}
