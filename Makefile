@@ -18,7 +18,8 @@ protoc-go:
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
 	./proto/user/*.proto ./proto/user/type/*.proto \
 	./proto/otp/*.proto ./proto/otp/type/*.proto \
-	./proto/product/*.proto ./proto/product/type/*.proto
+	./proto/product/*.proto ./proto/product/type/*.proto \
+	./proto/order/*.proto ./proto/order/type/*.proto \
 
 
 .PHONY: build
