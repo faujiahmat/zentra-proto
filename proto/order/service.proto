@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package order;
+
+import "proto/order/type/order.proto";
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/order";
+
+service OrderService {
+    rpc AddShippingId(order.type.AddShippingIdReq) returns (google.protobuf.Empty) {}
+    rpc UpdateStatus(order.type.UpdateStatusReq) returns (google.protobuf.Empty) {}
+}

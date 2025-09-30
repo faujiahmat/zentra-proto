@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package order.type;
+
+option go_package = "github.com/faujiahmat/zentra-proto/protogen/order";
+
+message AddShippingIdReq {
+    string order_id = 1 [json_name = "product_id"];
+    string shipping_id = 2 [json_name = "shipping_id"];
+}
+
+message UpdateStatusReq {
+    string order_id = 1 [json_name = "product_id"];
+    string status = 2;
+}
